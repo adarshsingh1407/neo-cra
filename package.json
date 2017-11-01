@@ -1,0 +1,30 @@
+{
+  "name": "neo-cra",
+  "version": "0.1.0",
+  "author": "Adarsh Singh",
+  "private": true,
+  "dependencies": {
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "ignore-styles": "^5.0.1",
+    "morgan": "^1.9.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.16"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && yarn babelify",
+    "babelify": "NODE_ENV=production babel src --out-dir babel-src --copy-files --ignore '**/*.test.js'",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
