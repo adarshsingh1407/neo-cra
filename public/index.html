@@ -21,7 +21,8 @@
     -->
   </head>
   <body>
-    <div id="root">{{SSR}}</div>
+    <div id="root"><div id="ssr"></div></div>
+    <script>window.DATA = "{{__SERVER_DATA__}}"</script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

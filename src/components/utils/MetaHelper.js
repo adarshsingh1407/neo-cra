@@ -1,6 +1,6 @@
 const baseTitle = `NEO-CRA`;
 
-const processMeta = (props) => {
+const processMeta = props => {
   var meta = {};
   if (props && props.title) {
     meta.title = `${baseTitle} | ${props.title}`;

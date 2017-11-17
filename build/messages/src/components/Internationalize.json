@@ -1,0 +1,6 @@
+[
+  {
+    "id": "common.hi",
+    "defaultMessage": "Hello {username}"
+  }
+]

@@ -1,7 +1,14 @@
 {
   "presets": [
     "env",
-    "react",
     "react-app"
+  ],
+  "plugins": [
+    [
+      "react-intl",
+      {
+        "messagesDir": "./build/messages/"
+      }
+    ]
   ]
 }

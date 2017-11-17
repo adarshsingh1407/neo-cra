@@ -1,5 +1,7 @@
 'use strict';
 
+var _jsxFileName = 'src/index.js';
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -8,7 +10,15 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _reactRedux = require('react-redux');
+
 var _reactRouterDom = require('react-router-dom');
+
+var _reactIntl = require('react-intl');
+
+var _store = require('./store');
+
+var _store2 = _interopRequireDefault(_store);
 
 require('./index.css');
 
@@ -16,15 +26,69 @@ var _App = require('./App');
 
 var _App2 = _interopRequireDefault(_App);
 
-var _registerServiceWorker = require('./registerServiceWorker');
+var _localeMsgs = require('./localeMsgs');
 
-var _registerServiceWorker2 = _interopRequireDefault(_registerServiceWorker);
+var _en = require('react-intl/locale-data/en');
+
+var _en2 = _interopRequireDefault(_en);
+
+var _fr = require('react-intl/locale-data/fr');
+
+var _fr2 = _interopRequireDefault(_fr);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+// import registerServiceWorker from './registerServiceWorker';
+
+(0, _reactIntl.addLocaleData)([].concat(_toConsumableArray(_en2.default), _toConsumableArray(_fr2.default)));
+
+var initialState = {};
+
+if (window.DATA && window.DATA !== '{{__SERVER_DATA__}}') {
+  // Let the reducers handle initial state
+  window.USE_SERVER_DATA = true;
+  initialState = JSON.parse(window.atob(window.DATA));
+}
+
+var store = (0, _store2.default)(initialState);
+
+var locale = (0, _localeMsgs.getLocale)();
+
 _reactDom2.default.hydrate(_react2.default.createElement(
-  _reactRouterDom.BrowserRouter,
-  null,
-  _react2.default.createElement(_App2.default, null)
+  _reactRedux.Provider,
+  { store: store, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  },
+  _react2.default.createElement(
+    _reactIntl.IntlProvider,
+    { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale), __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: undefined
+    },
+    _react2.default.createElement(
+      _reactRouterDom.BrowserRouter,
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: undefined
+      },
+      _react2.default.createElement(_App2.default, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: undefined
+      })
+    )
+  )
 ), document.getElementById('root'));
-(0, _registerServiceWorker2.default)();
+// registerServiceWorker();
