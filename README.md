@@ -1,6 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# NEO-CRA
 
-###NEO-CRA
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Stack:
 1. React 16
@@ -12,24 +12,27 @@ Stack:
 7. Universal-Cookie
 8. React-Intl
 
+---------------------------------------------
+
+BRANCH | DESCRIPTION
+------------ | -------------
+master | Async SSR, Redux, Internationalization
+static-ssr | Static SSR Implemented
+async-ssr | Async SSR Implemented (Also, Redux, Internationalization and other features)
+
 
 ---------------------------------------------
 
-DEV_MODE  : "yarn start"
-
-BUILD_DEV     : "yarn build:dev"
-
-BUILD_PROD     : "yarn build:prod"
-
-BABELIFY  : "yarn babelify"
-
-TEST      : "yarn test"
-
-EJECT_APP : "yarn eject"
-
-SERVE_PROD     : "pm2 start ecosystem.config.js --env production"
-
-SERVE_DEV     : "pm2 start ecosystem.config.js"
+TASK | COMMAND
+------------ | -------------
+DEV_MODE | yarn start
+BUILD_DEV | yarn build:dev
+BUILD_PROD | yarn build:prod
+BABELIFY | yarn babelify
+TEST | yarn test
+SERVE_PROD | pm2 start ecosystem.config.js --env production
+SERVE_DEV | pm2 start ecosystem.config.js
+EJECT_APP | yarn eject
 
 ---------------------------------------------
 
@@ -76,4 +79,4 @@ Add file to locales folder and add case to localeMsgs.js
 d. If explicit widget is required to change preferred language, set it in a cookie and handle it in getLocale of localeMsgs
 
 e. Translations Manager
-babel-plugin-react-intl[https://github.com/yahoo/babel-plugin-react-intl] currently helps spit out all the translations(for Translators) used in the app. If you want this to be in one file, use React-intl-translations-manager[https://github.com/GertjanReynaert/react-intl-translations-manager] for managing translations. It has other powerful options too, if you want to explore.
+[babel-plugin-react-intl](https://github.com/yahoo/babel-plugin-react-intl) currently helps spit out all the translations(for Translators) used in the app. If you want this to be in one file, use [React-intl-translations-manager](https://github.com/GertjanReynaert/react-intl-translations-manager) for managing translations. It has other powerful options too, if you want to explore.
