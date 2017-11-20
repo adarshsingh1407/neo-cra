@@ -19,8 +19,13 @@ BRANCH | DESCRIPTION
 master | Async SSR, Redux, Internationalization
 static-ssr | Static SSR Implemented
 async-ssr | Async SSR Implemented (Also, Redux, Internationalization and other features)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 5a39f03a8dd11252ddbbcb21c942445e03a35131
 ---------------------------------------------
 
 TASK | COMMAND
