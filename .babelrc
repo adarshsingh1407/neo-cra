@@ -4,6 +4,8 @@
     "react-app"
   ],
   "plugins": [
+    "syntax-dynamic-import",
+    "dynamic-import-node",
     [
       "react-intl",
       {

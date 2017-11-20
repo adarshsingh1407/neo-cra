@@ -11,13 +11,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = require('react-router-dom');
-
-var _PrivateRoute = require('./presentational/PrivateRoute');
-
-var _PrivateRoute2 = _interopRequireDefault(_PrivateRoute);
-
 var _ApiContextProvider = require('./utils/ApiContextProvider');
+
+var _AsyncComponent = require('./AsyncComponent');
+
+var _AsyncComponent2 = _interopRequireDefault(_AsyncComponent);
+
+var _reactRouterDom = require('react-router-dom');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43,10 +43,15 @@ var Protected = function (_Component) {
           accesstoken = _getApiContext.accesstoken;
 
       if (accesstoken) {
-        return _react2.default.createElement(_PrivateRoute2.default, {
+        var AsyncPrivateRoute = (0, _AsyncComponent2.default)(function () {
+          return Promise.resolve().then(function () {
+            return require("./presentational/PrivateRoute");
+          });
+        });
+        return _react2.default.createElement(AsyncPrivateRoute, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 12
           },
           __self: this
         });
@@ -55,7 +60,7 @@ var Protected = function (_Component) {
             pathname: '/aboutus'
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 16
           },
           __self: this
         });

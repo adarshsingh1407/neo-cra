@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom';
-import PrivateRoute from './presentational/PrivateRoute';
 import {getApiContext} from './utils/ApiContextProvider';
+import asyncComponent from "./AsyncComponent";
+import {Redirect} from 'react-router-dom';
 
 class Protected extends Component {
   render(){
     const {accesstoken} = getApiContext(this.props);
     if (accesstoken) {
+      const AsyncPrivateRoute = asyncComponent(() => import("./presentational/PrivateRoute"));
       return(
-        <PrivateRoute />
+        <AsyncPrivateRoute />
       )
     } else {
       return(

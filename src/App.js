@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom'
-import Main from './components/Main';
-import Protected from './components/Protected';
-import FormPage from './components/FormPage';
-import AboutUs from './components/presentational/AboutUs';
 import {Aux} from './components/utils/CommonUtil';
 import {cookies} from './components/utils/CookiesProvider';
+
+import asyncComponent from "./components/AsyncComponent";
+const AsyncAbout = asyncComponent(() => import("./components/presentational/AboutUs"));
+const AsyncMain = asyncComponent(() => import("./components/Main"));
+const AsyncProtected = asyncComponent(() => import("./components/Protected"));
+const AsyncFormPage = asyncComponent(() => import("./components/FormPage"));
 
 class App extends Component {
   removeAccessToken() {
@@ -16,13 +18,13 @@ class App extends Component {
     return (
       <Aux>
         <Switch>
-          <Route exact path="/" component={Main}/>
-          <Route exact path="/home" component={Main}/>
-          <Route exact path="/aboutus" component={AboutUs}/>
-          <Route exact path="/formPage" component={FormPage}/>
-          <Route path="/protected" component={Protected}/>
-          <Route exact path="/:username" component={Main}/>
-          <Route component={Main}/>
+          <Route exact path="/" component={AsyncMain}/>
+          <Route exact path="/home" component={AsyncMain}/>
+          <Route exact path="/aboutus" component={AsyncAbout}/>
+          <Route exact path="/formPage" component={AsyncFormPage}/>
+          <Route path="/protected" component={AsyncProtected}/>
+          <Route exact path="/:username" component={AsyncMain}/>
+          <Route component={AsyncMain}/>
         </Switch>
         <button onClick={this.removeAccessToken}>
           Fake Logout
