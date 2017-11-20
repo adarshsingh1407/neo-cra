@@ -19,13 +19,7 @@ BRANCH | DESCRIPTION
 master | Async SSR, Redux, Internationalization
 static-ssr | Static SSR Implemented
 async-ssr | Async SSR Implemented (Also, Redux, Internationalization and other features)
-<<<<<<< HEAD
 
-
-=======
-
-
->>>>>>> 5a39f03a8dd11252ddbbcb21c942445e03a35131
 ---------------------------------------------
 
 TASK | COMMAND
@@ -92,7 +86,7 @@ e. Translations Manager
 
 NOTE: Don't OVERDO it!
 
-a. Codes-splitting has been achieved by using (dynamic imports)[http://2ality.com/2017/01/import-operator.html#loading-code-on-demand], which is provided by default through CRA[https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting].
+a. Codes-splitting has been achieved by using [dynamic imports](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand), which is provided by default through [CRA](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting).
 
 b. AsyncComponent will provide you with a function(asyncComponent) to dynamically import Components in your modules/components.
 
