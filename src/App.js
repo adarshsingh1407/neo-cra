@@ -3,11 +3,35 @@ import { Switch, Route, Link } from 'react-router-dom'
 import {Aux} from './components/utils/CommonUtil';
 import {cookies} from './components/utils/CookiesProvider';
 
-import asyncComponent from "./components/AsyncComponent";
-const AsyncAbout = asyncComponent(() => import("./components/presentational/AboutUs"));
-const AsyncMain = asyncComponent(() => import("./components/Main"));
-const AsyncProtected = asyncComponent(() => import("./components/Protected"));
-const AsyncFormPage = asyncComponent(() => import("./components/FormPage"));
+// import asyncComponent from "./components/AsyncComponent";
+// const AsyncAbout = asyncComponent(() => import("./components/presentational/AboutUs"));
+// const AsyncMain = asyncComponent(() => import("./components/Main"));
+// const AsyncProtected = asyncComponent(() => import("./components/Protected"));
+// const AsyncFormPage = asyncComponent(() => import("./components/FormPage"));
+
+import Loadable from 'react-loadable';
+
+const Loading = (props) => {
+  if (props.error) {
+    return <div>Error!</div>;
+  } else if (props.pastDelay) {
+    return <div>Loading...</div>;
+  } else {
+    return null;
+  }
+}
+
+const LoadableAboutUs = Loadable({
+  loader: () => import('./components/presentational/AboutUs'),
+  loading: Loading,
+  delay: 300 // 0.3 seconds
+});
+
+const LoadableMain = Loadable({
+  loader: () => import('./components/Main'),
+  loading: Loading,
+  delay: 300 // 0.3 seconds
+});
 
 class App extends Component {
   removeAccessToken() {
@@ -18,13 +42,16 @@ class App extends Component {
     return (
       <Aux>
         <Switch>
-          <Route exact path="/" component={AsyncMain}/>
-          <Route exact path="/home" component={AsyncMain}/>
-          <Route exact path="/aboutus" component={AsyncAbout}/>
-          <Route exact path="/formPage" component={AsyncFormPage}/>
-          <Route path="/protected" component={AsyncProtected}/>
-          <Route exact path="/:username" component={AsyncMain}/>
-          <Route component={AsyncMain}/>
+          <Route exact path="/:username" component={LoadableMain}/>
+          <Route exact path="/aboutus" component={LoadableAboutUs}/>
+          <Route component={LoadableMain}/>
+          {/* <Route exact path="/" component={AsyncMain}/>
+            <Route exact path="/home" component={AsyncMain}/>
+            <Route exact path="/aboutus" component={AsyncAbout}/>
+            <Route exact path="/formPage" component={AsyncFormPage}/>
+            <Route path="/protected" component={AsyncProtected}/>
+            <Route exact path="/:username" component={AsyncMain}/>
+          <Route component={AsyncMain}/> */}
         </Switch>
         <button onClick={this.removeAccessToken}>
           Fake Logout

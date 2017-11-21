@@ -1,11 +1,20 @@
 const app = require('./app')
 
+const Loadable = require('react-loadable')
+
 const PORT = process.env.PORT || 9000;
 
-app.listen(PORT, () => {
-  console.log(`NEO-CRA running on port ${PORT}!`)
-})
-app.on('error', onError)
+Loadable.preloadAll().then(() => {
+  app.listen(PORT, () => {
+    console.log(`NEO-CRA running on port ${PORT}!`)
+  })
+  app.on('error', onError)
+});
+
+// app.listen(PORT, () => {
+//   console.log(`NEO-CRA running on port ${PORT}!`)
+// })
+// app.on('error', onError)
 
 function onError(error) {
   if (error.syscall !== 'listen') {

@@ -22,6 +22,10 @@ var _App = require('./App');
 
 var _App2 = _interopRequireDefault(_App);
 
+var _reactLoadable = require('react-loadable');
+
+var _reactLoadable2 = _interopRequireDefault(_reactLoadable);
+
 var _localeMsgs = require('./localeMsgs');
 
 var _en = require('react-intl/locale-data/en');
@@ -40,38 +44,52 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function render(req, store, context) {
   var locale = (0, _localeMsgs.getLocale)(req);
-  return (0, _server.renderToString)(_react2.default.createElement(
-    _reactRedux.Provider,
-    { store: store, __source: {
+  var modules = [];
+  var html = (0, _server.renderToString)(_react2.default.createElement(
+    _reactLoadable2.default.Capture,
+    { report: function report(moduleName) {
+        return modules.push(moduleName);
+      }, __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 21
       },
       __self: this
     },
     _react2.default.createElement(
-      _reactIntl.IntlProvider,
-      { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale), __source: {
+      _reactRedux.Provider,
+      { store: store, __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 22
         },
         __self: this
       },
       _react2.default.createElement(
-        _reactRouterDom.StaticRouter,
-        { location: req.url, context: context, __source: {
+        _reactIntl.IntlProvider,
+        { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale), __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 23
           },
           __self: this
         },
-        _react2.default.createElement(_App2.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
+        _react2.default.createElement(
+          _reactRouterDom.StaticRouter,
+          { location: req.url, context: context, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24
+            },
+            __self: this
           },
-          __self: this
-        })
+          _react2.default.createElement(_App2.default, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 25
+            },
+            __self: this
+          })
+        )
       )
     )
   ));
+  console.log('modules:', modules);
+  return html;
 }

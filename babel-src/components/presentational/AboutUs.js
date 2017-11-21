@@ -33,11 +33,12 @@ var AboutUs = function (_Component) {
   _createClass(AboutUs, [{
     key: 'render',
     value: function render() {
+      console.log('AboutUs Rendered');
       return _react2.default.createElement(
         'div',
         { className: 'bold', __source: {
             fileName: _jsxFileName,
-            lineNumber: 7
+            lineNumber: 8
           },
           __self: this
         },
@@ -46,7 +47,7 @@ var AboutUs = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 8
+              lineNumber: 9
             },
             __self: this
           },
@@ -54,9 +55,9 @@ var AboutUs = function (_Component) {
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/', __source: {
+          { to: '/adarshsingh1407', __source: {
               fileName: _jsxFileName,
-              lineNumber: 9
+              lineNumber: 10
             },
             __self: this
           },

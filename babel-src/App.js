@@ -3,9 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jsxFileName = 'src/App.js';
+
+// import asyncComponent from "./components/AsyncComponent";
+// const AsyncAbout = asyncComponent(() => import("./components/presentational/AboutUs"));
+// const AsyncMain = asyncComponent(() => import("./components/Main"));
+// const AsyncProtected = asyncComponent(() => import("./components/Protected"));
+// const AsyncFormPage = asyncComponent(() => import("./components/FormPage"));
 
 var _react = require('react');
 
@@ -17,9 +24,9 @@ var _CommonUtil = require('./components/utils/CommonUtil');
 
 var _CookiesProvider = require('./components/utils/CookiesProvider');
 
-var _AsyncComponent = require('./components/AsyncComponent');
+var _reactLoadable = require('react-loadable');
 
-var _AsyncComponent2 = _interopRequireDefault(_AsyncComponent);
+var _reactLoadable2 = _interopRequireDefault(_reactLoadable);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29,25 +36,62 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AsyncAbout = (0, _AsyncComponent2.default)(function () {
-  return Promise.resolve().then(function () {
-    return require("./components/presentational/AboutUs");
-  });
+var Loading = function Loading(props) {
+  if (props.error) {
+    return _react2.default.createElement(
+      'div',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: undefined
+      },
+      'Error!'
+    );
+  } else if (props.pastDelay) {
+    return _react2.default.createElement(
+      'div',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: undefined
+      },
+      'Loading...'
+    );
+  } else {
+    return null;
+  }
+};
+
+var LoadableAboutUs = (0, _reactLoadable2.default)({
+  loader: function loader() {
+    return Promise.resolve().then(function () {
+      return require('./components/presentational/AboutUs');
+    });
+  },
+  modules: ['./components/presentational/AboutUs'],
+  webpack: function webpack() {
+    return [require.resolveWeak('./components/presentational/AboutUs')];
+  },
+  loading: Loading,
+  delay: 300 // 0.3 seconds
 });
-var AsyncMain = (0, _AsyncComponent2.default)(function () {
-  return Promise.resolve().then(function () {
-    return require("./components/Main");
-  });
-});
-var AsyncProtected = (0, _AsyncComponent2.default)(function () {
-  return Promise.resolve().then(function () {
-    return require("./components/Protected");
-  });
-});
-var AsyncFormPage = (0, _AsyncComponent2.default)(function () {
-  return Promise.resolve().then(function () {
-    return require("./components/FormPage");
-  });
+
+var LoadableMain = (0, _reactLoadable2.default)({
+  loader: function loader() {
+    return Promise.resolve().then(function () {
+      return require('./components/Main');
+    });
+  },
+  modules: ['./components/Main'],
+  webpack: function webpack() {
+    return [require.resolveWeak('./components/Main')];
+  },
+  loading: Loading,
+  delay: 300 // 0.3 seconds
 });
 
 var App = function (_Component) {
@@ -73,7 +117,7 @@ var App = function (_Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 43
           },
           __self: this
         },
@@ -82,49 +126,25 @@ var App = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 20
+              lineNumber: 44
             },
             __self: this
           },
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: AsyncMain, __source: {
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:username', component: LoadableMain, __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 45
             },
             __self: this
           }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/home', component: AsyncMain, __source: {
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/aboutus', component: LoadableAboutUs, __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 46
             },
             __self: this
           }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/aboutus', component: AsyncAbout, __source: {
+          _react2.default.createElement(_reactRouterDom.Route, { component: LoadableMain, __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/formPage', component: AsyncFormPage, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 24
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/protected', component: AsyncProtected, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 25
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:username', component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 26
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 27
+              lineNumber: 47
             },
             __self: this
           })
@@ -133,7 +153,7 @@ var App = function (_Component) {
           'button',
           { onClick: this.removeAccessToken, __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 56
             },
             __self: this
           },
@@ -142,7 +162,7 @@ var App = function (_Component) {
         _react2.default.createElement('br', {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 59
           },
           __self: this
         }),
@@ -150,7 +170,7 @@ var App = function (_Component) {
           _reactRouterDom.Link,
           { to: '/formPage', __source: {
               fileName: _jsxFileName,
-              lineNumber: 33
+              lineNumber: 60
             },
             __self: this
           },
@@ -159,7 +179,7 @@ var App = function (_Component) {
         _react2.default.createElement('br', {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 61
           },
           __self: this
         }),
@@ -167,7 +187,7 @@ var App = function (_Component) {
           _reactRouterDom.Link,
           { to: '/protected', __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 62
             },
             __self: this
           },

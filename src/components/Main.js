@@ -52,6 +52,7 @@ class MainParent extends Component {
     return user
   }
   render(){
+    console.log('Main Rendered');
     return (
       <Aux>
         <Main {...this.props} />

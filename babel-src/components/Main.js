@@ -208,25 +208,26 @@ var MainParent = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log('Main Rendered');
       return _react2.default.createElement(
         _CommonUtil.Aux,
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 57
           },
           __self: this
         },
         _react2.default.createElement(_Main2.default, Object.assign({}, this.props, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 58
           },
           __self: this
         })),
         _react2.default.createElement(_Internationalize2.default, { user: this.props.user, __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 59
           },
           __self: this
         })
