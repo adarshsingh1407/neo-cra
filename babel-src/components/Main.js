@@ -8,8 +8,6 @@ var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _jsxFileName = 'src/components/Main.js';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -210,26 +208,9 @@ var MainParent = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _CommonUtil.Aux,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 56
-          },
-          __self: this
-        },
-        _react2.default.createElement(_Main2.default, Object.assign({}, this.props, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 57
-          },
-          __self: this
-        })),
-        _react2.default.createElement(_Internationalize2.default, { user: this.props.user, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 58
-          },
-          __self: this
-        })
+        null,
+        _react2.default.createElement(_Main2.default, this.props),
+        _react2.default.createElement(_Internationalize2.default, { user: this.props.user })
       );
     }
   }]);

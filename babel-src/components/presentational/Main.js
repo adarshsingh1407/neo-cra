@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/components/presentational/Main.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -65,102 +64,41 @@ var Main = function (_Component) {
 
       return _react2.default.createElement(
         _CommonUtil.Aux,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 20
-          },
-          __self: this
-        },
-        _react2.default.createElement(_MetaHelmet2.default, { title: name, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          },
-          __self: this
-        }),
-        _react2.default.createElement(_Header2.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 22
-          },
-          __self: this
-        }),
+        null,
+        _react2.default.createElement(_MetaHelmet2.default, { title: name }),
+        _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(
           'div',
-          { className: 'bold', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 23
-            },
-            __self: this
-          },
+          { className: 'bold' },
           _react2.default.createElement(
             'h2',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 24
-              },
-              __self: this
-            },
+            null,
             'GitHub User Details:'
           ),
           _react2.default.createElement(
             'p',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 25
-              },
-              __self: this
-            },
+            null,
             'Username: ' + login
           ),
           _react2.default.createElement(
             'p',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 26
-              },
-              __self: this
-            },
+            null,
             'Name: ' + name
           ),
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { to: '/aboutus', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 27
-              },
-              __self: this
-            },
+            { to: '/aboutus' },
             'About Us'
           ),
           _react2.default.createElement(
             'button',
-            { onClick: this.setAccessToken, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 28
-              },
-              __self: this
-            },
+            { onClick: this.setAccessToken },
             'Fake Login'
           ),
-          _react2.default.createElement('br', {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 31
-            },
-            __self: this
-          }),
+          _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',
-            { onClick: this.printToken, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 32
-              },
-              __self: this
-            },
+            { onClick: this.printToken },
             'Print accesstoken'
           )
         )

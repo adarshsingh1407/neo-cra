@@ -3,6 +3,7 @@ import { ENV } from '../config'
 import { MSG } from '../messages'
 
 const getUserDetails = (apiContext) => {
+  console.log('apiContext', apiContext);
   const {username} = apiContext.pathParams;
   return githubApi.request({
       url: `${ENV.GET_USER_DETAILS}/${username}`,

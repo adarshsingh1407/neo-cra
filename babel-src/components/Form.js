@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/components/Form.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -55,46 +54,24 @@ var Form = function (_Component) {
               isBlocking: false
             });
             window.isFormDirty = false;
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 17
-          },
-          __self: this
+          }
         },
         _react2.default.createElement(_reactRouterDom.Prompt, {
           when: this.isBlocked(),
           message: function message(location) {
             console.log('location', location);
             return 'You have unsaved changes. Are you sure you want to go to ' + location.pathname + '?';
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 27
-          },
-          __self: this
+          }
         }),
         _react2.default.createElement(
           'p',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 35
-            },
-            __self: this
-          },
+          null,
           'Blocking? ',
           isBlocking ? 'Yes, click a link or the back button' : 'Nope'
         ),
         _react2.default.createElement(
           'p',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 39
-            },
-            __self: this
-          },
+          null,
           _react2.default.createElement('input', {
             size: '50',
             placeholder: 'type something to block transitions',
@@ -103,32 +80,15 @@ var Form = function (_Component) {
               _this2.setState({
                 isBlocking: event.target.value.length > 0
               });
-            },
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 40
-            },
-            __self: this
+            }
           })
         ),
         _react2.default.createElement(
           'p',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            },
-            __self: this
-          },
+          null,
           _react2.default.createElement(
             'button',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 53
-              },
-              __self: this
-            },
+            null,
             'Submit to stop blocking'
           )
         )

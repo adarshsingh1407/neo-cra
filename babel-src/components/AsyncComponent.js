@@ -8,8 +8,6 @@ var _regenerator = require("babel-runtime/regenerator");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _jsxFileName = "src/components/AsyncComponent.js";
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 exports.default = asyncComponent;
@@ -82,13 +80,7 @@ function asyncComponent(importComponent) {
       value: function render() {
         var C = this.state.component;
 
-        return C ? _react2.default.createElement(C, Object.assign({}, this.props, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 23
-          },
-          __self: this
-        })) : null;
+        return C ? _react2.default.createElement(C, this.props) : null;
       }
     }]);
 

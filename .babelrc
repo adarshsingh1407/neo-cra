@@ -4,6 +4,7 @@
     "react-app"
   ],
   "plugins": [
+    "universal-import",
     "syntax-dynamic-import",
     "dynamic-import-node",
     [

@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/serverRender.js';
 exports.render = render;
 
 var _react = require('react');
@@ -42,35 +41,14 @@ function render(req, store, context) {
   var locale = (0, _localeMsgs.getLocale)(req);
   return (0, _server.renderToString)(_react2.default.createElement(
     _reactRedux.Provider,
-    { store: store, __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    },
+    { store: store },
     _react2.default.createElement(
       _reactIntl.IntlProvider,
-      { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale), __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      },
+      { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale) },
       _react2.default.createElement(
         _reactRouterDom.StaticRouter,
-        { location: req.url, context: context, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18
-          },
-          __self: this
-        },
-        _react2.default.createElement(_App2.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          },
-          __self: this
-        })
+        { location: req.url, context: context },
+        _react2.default.createElement(_App2.default, null)
       )
     )
   ));

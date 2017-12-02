@@ -12,6 +12,7 @@ var _config = require('../config');
 var _messages = require('../messages');
 
 var getUserDetails = function getUserDetails(apiContext) {
+  console.log('apiContext', apiContext);
   var username = apiContext.pathParams.username;
 
   return _ApiProvider.githubApi.request({
