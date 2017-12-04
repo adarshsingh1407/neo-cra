@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/components/Protected.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -48,22 +47,11 @@ var Protected = function (_Component) {
             return require("./presentational/PrivateRoute");
           });
         });
-        return _react2.default.createElement(AsyncPrivateRoute, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          },
-          __self: this
-        });
+        return _react2.default.createElement(AsyncPrivateRoute, null);
       } else {
         return _react2.default.createElement(_reactRouterDom.Redirect, { to: {
             pathname: '/aboutus'
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 16
-          },
-          __self: this
-        });
+          } });
       }
     }
   }]);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route, Link } from 'react-router-dom'
 import {Aux} from './components/utils/CommonUtil';
 import {cookies} from './components/utils/CookiesProvider';
-
+import Main from './components/Main';
 import asyncComponent from "./components/AsyncComponent";
 const AsyncAbout = asyncComponent(() => import("./components/presentational/AboutUs"));
 const AsyncMain = asyncComponent(() => import("./components/Main"));
@@ -23,7 +23,7 @@ class App extends Component {
           <Route exact path="/aboutus" component={AsyncAbout}/>
           <Route exact path="/formPage" component={AsyncFormPage}/>
           <Route path="/protected" component={AsyncProtected}/>
-          <Route exact path="/:username" component={AsyncMain}/>
+          <Route exact path="/:username" component={Main}/>
           <Route component={AsyncMain}/>
         </Switch>
         <button onClick={this.removeAccessToken}>

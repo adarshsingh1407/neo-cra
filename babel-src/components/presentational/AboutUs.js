@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/components/presentational/AboutUs.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -35,31 +34,15 @@ var AboutUs = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'bold', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 7
-          },
-          __self: this
-        },
+        { className: 'bold' },
         _react2.default.createElement(
           'h2',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 8
-            },
-            __self: this
-          },
+          null,
           'About Us'
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 9
-            },
-            __self: this
-          },
+          { to: '/' },
           'Main'
         )
       );

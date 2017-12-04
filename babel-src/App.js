@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/App.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16,6 +15,10 @@ var _reactRouterDom = require('react-router-dom');
 var _CommonUtil = require('./components/utils/CommonUtil');
 
 var _CookiesProvider = require('./components/utils/CookiesProvider');
+
+var _Main = require('./components/Main');
+
+var _Main2 = _interopRequireDefault(_Main);
 
 var _AsyncComponent = require('./components/AsyncComponent');
 
@@ -70,107 +73,33 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _CommonUtil.Aux,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          },
-          __self: this
-        },
+        null,
         _react2.default.createElement(
           _reactRouterDom.Switch,
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 20
-            },
-            __self: this
-          },
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 21
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/home', component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 22
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/aboutus', component: AsyncAbout, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 23
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/formPage', component: AsyncFormPage, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 24
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { path: '/protected', component: AsyncProtected, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 25
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:username', component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 26
-            },
-            __self: this
-          }),
-          _react2.default.createElement(_reactRouterDom.Route, { component: AsyncMain, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 27
-            },
-            __self: this
-          })
+          null,
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: AsyncMain }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/home', component: AsyncMain }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/aboutus', component: AsyncAbout }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/formPage', component: AsyncFormPage }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/protected', component: AsyncProtected }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:username', component: _Main2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { component: AsyncMain })
         ),
         _react2.default.createElement(
           'button',
-          { onClick: this.removeAccessToken, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 29
-            },
-            __self: this
-          },
+          { onClick: this.removeAccessToken },
           'Fake Logout'
         ),
-        _react2.default.createElement('br', {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 32
-          },
-          __self: this
-        }),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/formPage', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 33
-            },
-            __self: this
-          },
+          { to: '/formPage' },
           'Form Page'
         ),
-        _react2.default.createElement('br', {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 34
-          },
-          __self: this
-        }),
+        _react2.default.createElement('br', null),
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/protected', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 35
-            },
-            __self: this
-          },
+          { to: '/protected' },
           'Protected Page'
         )
       );

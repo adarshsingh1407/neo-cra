@@ -1,7 +1,5 @@
 'use strict';
 
-var _jsxFileName = 'src/index.js';
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -58,36 +56,14 @@ var locale = (0, _localeMsgs.getLocale)();
 
 _reactDom2.default.hydrate(_react2.default.createElement(
   _reactRedux.Provider,
-  { store: store, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  },
+  { store: store },
   _react2.default.createElement(
     _reactIntl.IntlProvider,
-    { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale), __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: undefined
-    },
+    { locale: locale, messages: (0, _localeMsgs.getLocaleMsgs)(locale) },
     _react2.default.createElement(
       _reactRouterDom.BrowserRouter,
-      {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: undefined
-      },
-      _react2.default.createElement(_App2.default, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: undefined
-      })
+      null,
+      _react2.default.createElement(_App2.default, null)
     )
   )
 ), document.getElementById('root'));

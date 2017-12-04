@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _jsxFileName = 'src/components/FormPage.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -41,37 +40,14 @@ var FormPage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _CommonUtil.Aux,
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 9
-          },
-          __self: this
-        },
+        null,
         _react2.default.createElement(
           _reactRouterDom.Link,
-          { to: '/', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 10
-            },
-            __self: this
-          },
+          { to: '/' },
           'Main'
         ),
-        _react2.default.createElement('br', {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 11
-          },
-          __self: this
-        }),
-        _react2.default.createElement(_Form2.default, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          },
-          __self: this
-        })
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(_Form2.default, null)
       );
     }
   }]);
